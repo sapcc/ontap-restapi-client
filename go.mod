@@ -1,4 +1,4 @@
-module github.com/sapcc/ontap-restapi
+module github.com/sapcc/ontap-restapi-client
 
 go 1.22.2
 
