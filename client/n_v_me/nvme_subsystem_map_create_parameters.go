@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/sapcc/ontap-restapi/models"
+	"github.com/sapcc/ontap-restapi-client/models"
 )
 
 // NewNvmeSubsystemMapCreateParams creates a new NvmeSubsystemMapCreateParams object,

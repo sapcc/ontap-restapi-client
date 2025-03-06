@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sapcc/ontap-restapi/models"
+	"github.com/sapcc/ontap-restapi-client/models"
 )
 
 // GroupPolicyObjectCentralAccessPolicyCollectionGetReader is a Reader for the GroupPolicyObjectCentralAccessPolicyCollectionGet structure.

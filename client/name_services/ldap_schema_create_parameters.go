@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/sapcc/ontap-restapi/models"
+	"github.com/sapcc/ontap-restapi-client/models"
 )
 
 // NewLdapSchemaCreateParams creates a new LdapSchemaCreateParams object,

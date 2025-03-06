@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sapcc/ontap-restapi/models"
+	"github.com/sapcc/ontap-restapi-client/models"
 )
 
 // SnaplockFingerprintOperationGetReader is a Reader for the SnaplockFingerprintOperationGet structure.
