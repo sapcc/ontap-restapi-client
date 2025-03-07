@@ -37,12 +37,11 @@ func NewClient(cfg NetAppClientConfig) (*apiclient.ONTAPRESTAPIOnlineReference, 
 
 	// data is of type *models.ErrorResponse
 	// maybe we need to manually parse error in some other consumer?
-	// rt.Consumers["application/hal+json"] = runtime.JSONConsumer()
-	// rt.Producers["application/hal+json"] = runtime.JSONProducer()
 
 	rt := httptransport.NewWithClient(cfg.Host, apiclient.DefaultBasePath, apiclient.DefaultSchemes, tslClient)
 	rt.Debug = cfg.Debug
 	rt.DefaultAuthentication = cfg.BasicAuth()
+	rt.Consumers["application/hal+json"] = runtime.JSONConsumer()
 	rt.Consumers["text/html"] = runtime.ConsumerFunc(func(reader io.Reader, data interface{}) error {
 		if bytes, err := io.ReadAll(reader); err == nil {
 			return fmt.Errorf("error: %v", string(bytes))
