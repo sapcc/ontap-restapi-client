@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/sapcc/ontap-restapi-client/models"
+	"github.com/sapcc/ontap-restapi-client/swagger/models"
 )
 
 // NewCifsSearchPathCreateParams creates a new CifsSearchPathCreateParams object,

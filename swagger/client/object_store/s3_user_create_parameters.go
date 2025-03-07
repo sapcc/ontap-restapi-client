@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/sapcc/ontap-restapi-client/models"
+	"github.com/sapcc/ontap-restapi-client/swagger/models"
 )
 
 // NewS3UserCreateParams creates a new S3UserCreateParams object,

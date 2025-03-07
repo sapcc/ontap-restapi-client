@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sapcc/ontap-restapi-client/models"
+	"github.com/sapcc/ontap-restapi-client/swagger/models"
 )
 
 // UserGroupPrivilegesCollectionGetReader is a Reader for the UserGroupPrivilegesCollectionGet structure.
