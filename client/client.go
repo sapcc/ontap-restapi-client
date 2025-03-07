@@ -11,24 +11,24 @@ import (
 )
 
 type NetAppClientConfig struct {
-	host       string
-	serverName string
-	username   string
-	password   string
-	debug      bool
-	insecure   bool
+	Host       string
+	ServerName string
+	Username   string
+	Password   string
+	Debug      bool
+	Insecure   bool
 }
 
 func NewClient(cfg NetAppClientConfig) (*apiclient.ONTAPRESTAPIOnlineReference, error) {
-	if cfg.serverName == "" {
-		cfg.serverName = cfg.host
+	if cfg.ServerName == "" {
+		cfg.ServerName = cfg.Host
 	}
 
 	tlsOptions := httptransport.TLSClientOptions{}
-	if cfg.insecure {
+	if cfg.Insecure {
 		tlsOptions.InsecureSkipVerify = true
-	} else if cfg.serverName != "" {
-		tlsOptions.ServerName = cfg.serverName
+	} else if cfg.ServerName != "" {
+		tlsOptions.ServerName = cfg.ServerName
 	}
 	tslClient, err := httptransport.TLSClient(tlsOptions)
 	if err != nil {
@@ -40,8 +40,8 @@ func NewClient(cfg NetAppClientConfig) (*apiclient.ONTAPRESTAPIOnlineReference, 
 	// rt.Consumers["application/hal+json"] = runtime.JSONConsumer()
 	// rt.Producers["application/hal+json"] = runtime.JSONProducer()
 
-	rt := httptransport.NewWithClient(cfg.host, apiclient.DefaultBasePath, apiclient.DefaultSchemes, tslClient)
-	rt.Debug = cfg.debug
+	rt := httptransport.NewWithClient(cfg.Host, apiclient.DefaultBasePath, apiclient.DefaultSchemes, tslClient)
+	rt.Debug = cfg.Debug
 	rt.DefaultAuthentication = cfg.BasicAuth()
 	rt.Consumers["text/html"] = runtime.ConsumerFunc(func(reader io.Reader, data interface{}) error {
 		if bytes, err := io.ReadAll(reader); err == nil {
@@ -54,5 +54,5 @@ func NewClient(cfg NetAppClientConfig) (*apiclient.ONTAPRESTAPIOnlineReference, 
 }
 
 func (c NetAppClientConfig) BasicAuth() runtime.ClientAuthInfoWriter {
-	return httptransport.BasicAuth(c.username, c.password)
+	return httptransport.BasicAuth(c.Username, c.Password)
 }
